@@ -1,18 +1,5 @@
 <h1>タスク登録ページ</h1>
 
-  <%= form_for(@task) do |f| %>
-    <%= f.label :content, 'タスク' %>
-    <%= f.text_field :content %>
-    
-    <%= f.select :status, [["未完了", "未完了"], ["完了", "完了"]] %>
-    
-    <!--<%= f.radio_button :status, :未完了, checked: "checked" %>-->
-    <!--<%= f.label :未完了, class: "status_label" %>-->
-    <!--<%= f.radio_button :status, :完了, checked: "checld" %>-->
-    <!--<%= f.label :完了, class: "status_label" %>-->
-
- 
-    <%= f.submit '投稿' %>
-  <% end %>
+<%= render 'form', task: @task %>
   
-  <%= link_to 'タスク一覧へ戻る', tasks_path %>
+<%= link_to 'タスク一覧へ戻る', tasks_path %>

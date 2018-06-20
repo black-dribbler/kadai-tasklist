@@ -1,17 +1,5 @@
 <h1>ID:<%= @task.id %>のタスクの編集ページ</h1>
 
-<%= form_for(@task) do |f| %>
-  <%= f.label :content, 'タスク' %>
-  <%= f.text_field :content %>
+<%= render 'form', task: @task %>
   
-  <%= f.select :status, [["未完了", "未完了"], ["完了", "完了"]] %>
-  
-  <!--<%= f.radio_button :status, :未完了, checked: "checked" %>-->
-  <!--<%= f.label :未完了, class: "status_label" %>-->
-  <!--<%= f.radio_button :status, :完了, checked: "checld" %>-->
-  <!--<%= f.label :完了, class: "status_label" %>-->
-  
-  <%= f.submit '投稿' %>
-<% end %>
-
-<%= link_to '一覧に戻る', task_path %>
+<%= link_to 'タスク一覧へ戻る', tasks_path %>
